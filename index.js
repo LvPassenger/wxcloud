@@ -12,6 +12,9 @@ app.use(express.json());
 app.use(cors());
 app.use(logger);
 
+// 静态资源
+app.use(express.static(path.join(__dirname, 'public')));
+
 // 首页
 app.get("/", async (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
